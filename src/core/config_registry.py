@@ -383,7 +383,7 @@ _FIELD_DEFINITIONS: Dict[str, Dict[str, Any]] = {
         "display_order": 2,
         "help_key": "settings.ai_model.LITELLM_FALLBACK_MODELS",
         "examples": [
-            "LITELLM_FALLBACK_MODELS=deepseek/deepseek-v4-pro,gemini/gemini-3-flash-preview",
+            "LITELLM_FALLBACK_MODELS=deepseek/deepseek-v4-pro,gemini/gemini-3.1-flash-lite",
             "LITELLM_FALLBACK_MODELS=openai/gpt-5.4-mini",
         ],
         "docs": [
@@ -1341,7 +1341,7 @@ _FIELD_DEFINITIONS: Dict[str, Dict[str, Any]] = {
         "is_sensitive": False,
         "is_required": False,
         "is_editable": True,
-        "default_value": "gemini-3-flash-preview",
+        "default_value": "gemini-3.5-flash-lite",
         "options": [],
         "validation": {},
         "display_order": 21,
@@ -4510,8 +4510,8 @@ _FIELD_HELP_METADATA: Dict[str, Dict[str, Any]] = {
     "GEMINI_MODEL_FALLBACK": {
         "help_key": "settings.ai_model.legacy_provider_params",
         "examples": [
-            "GEMINI_MODEL_FALLBACK=gemini-3-flash-preview",
-            "LITELLM_FALLBACK_MODELS=gemini/gemini-3-flash-preview",
+            "GEMINI_MODEL_FALLBACK=gemini-3.1-flash-lite",
+            "LITELLM_FALLBACK_MODELS=gemini/gemini-3.1-flash-lite",
         ],
         "docs": _DOC_LLM_CONFIG,
         "warning_codes": ["legacy_provider_setting"],
