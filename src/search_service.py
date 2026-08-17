@@ -2464,10 +2464,10 @@ class SearchService:
             self._providers.append(MiniMaxSearchProvider(minimax_keys))
             logger.info(f"已配置 MiniMax 搜索，共 {len(minimax_keys)} 个 API Key")
 
-        # 6. SearXNG（自建实例优先；未配置时可自动发现公共实例）
+        # 6. SearXNG（自建实例优先；未配置时可自动发现公共实例） bool(searxng_public_instances_enabled and not searxng_base_urls)
         searxng_provider = SearXNGSearchProvider(
             searxng_base_urls,
-            use_public_instances=bool(searxng_public_instances_enabled and not searxng_base_urls),
+            use_public_instances=False,
         )
         if searxng_provider.is_available:
             self._providers.append(searxng_provider)
