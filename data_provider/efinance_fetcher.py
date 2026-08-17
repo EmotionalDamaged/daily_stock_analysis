@@ -278,9 +278,9 @@ class EfinanceFetcher(BaseFetcher):
     """
     
     name = "EfinanceFetcher"
-    priority = int(os.getenv("EFINANCE_PRIORITY", "0"))  # 最高优先级，排在 AkshareFetcher 之前
+    priority = int(os.getenv("EFINANCE_PRIORITY", "10"))  # 最高优先级，排在 AkshareFetcher 之前
     
-    def __init__(self, sleep_min: float = 1.5, sleep_max: float = 3.0):
+    def __init__(self, sleep_min: float = 0.2, sleep_max: float = 0.5):
         """
         初始化 EfinanceFetcher
         
@@ -525,7 +525,7 @@ class EfinanceFetcher(BaseFetcher):
                 fqt=1,    # forward-adjusted
                 quote_id_mode=True,
                 use_id_cache=False,
-                timeout=60,
+                timeout=3,
             )
 
             api_elapsed = time.time() - api_start
