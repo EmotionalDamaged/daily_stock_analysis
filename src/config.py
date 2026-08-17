@@ -1598,7 +1598,7 @@ class Config:
 
             if not litellm_fallback_models and not litellm_fallback_models_explicit:
                 # Backward compat: use gemini_model_fallback when primary is gemini
-                _gemini_fallback = os.getenv('GEMINI_MODEL_FALLBACK', 'gemini-3-flash-preview').strip()
+                _gemini_fallback = os.getenv('GEMINI_MODEL_FALLBACK', 'gemini-3.1-flash-lite').strip()
                 if litellm_model.startswith('gemini/') and _gemini_fallback:
                     _fb = f'gemini/{_gemini_fallback}' if '/' not in _gemini_fallback else _gemini_fallback
                     litellm_fallback_models = [_fb]
@@ -1838,8 +1838,8 @@ class Config:
             openai_api_keys=openai_api_keys,
             deepseek_api_keys=deepseek_api_keys,
             gemini_api_key=os.getenv('GEMINI_API_KEY'),
-            gemini_model=os.getenv('GEMINI_MODEL', 'gemini-3.1-pro-preview'),
-            gemini_model_fallback=os.getenv('GEMINI_MODEL_FALLBACK', 'gemini-3-flash-preview'),
+            gemini_model=os.getenv('GEMINI_MODEL', 'gemini-3.5-flash-lite'),
+            gemini_model_fallback=os.getenv('GEMINI_MODEL_FALLBACK', 'gemini-3.1-flash-lite'),
             gemini_temperature=parse_env_float(os.getenv('GEMINI_TEMPERATURE'), 0.7, field_name='GEMINI_TEMPERATURE'),
             gemini_request_delay=parse_env_float(os.getenv('GEMINI_REQUEST_DELAY'), 2.0, field_name='GEMINI_REQUEST_DELAY', minimum=0.0),
             gemini_max_retries=parse_env_int(os.getenv('GEMINI_MAX_RETRIES'), 5, field_name='GEMINI_MAX_RETRIES', minimum=0),
