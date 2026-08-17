@@ -942,14 +942,14 @@ class Config:
 
     # Legacy single-key fields (kept for backward compatibility; gemini_api_keys[0] when set)
     gemini_api_key: Optional[str] = None
-    gemini_model: str = "gemini-3.1-pro-preview"  # 主模型
-    gemini_model_fallback: str = "gemini-3-flash-preview"  # 备选模型
+    gemini_model: str = "gemini-3.1-flash-lite"  # 主模型 gemini-3.1-pro-preview
+    gemini_model_fallback: str = "gemini-3.5-flash-lite"  # 备选模型
     gemini_temperature: float = 0.7  # 温度参数（0.0-2.0，控制输出随机性，默认0.7）
 
     # Gemini API 请求配置（防止 429 限流）
-    gemini_request_delay: float = 2.0  # 请求间隔（秒）
-    gemini_max_retries: int = 5  # 最大重试次数
-    gemini_retry_delay: float = 5.0  # 重试基础延时（秒）
+    gemini_request_delay: float = 6.0  # 请求间隔（秒）
+    gemini_max_retries: int = 8  # 最大重试次数
+    gemini_retry_delay: float = 10.0  # 重试基础延时（秒）
 
     # Anthropic Claude API（备选，当 Gemini 不可用时使用）
     anthropic_api_key: Optional[str] = None
